@@ -24,11 +24,11 @@ variable "security_group_ids" {
   type        = "list"
 }
 
+# list("${var.internet_access ? aws_security_group.access_to_internet.id : ""}")
 locals {
   security_groups = ["${
     compact(distinct(concat(
         var.security_group_ids,
-        list("${var.internet_access ? aws_security_group.access_to_internet.id : ""}")
     )))
   }"]
 }
@@ -88,10 +88,10 @@ variable "public_ip" {
   default     = false
 }
 
-variable "internet_access" {
-  description = "Allow access to internet"
-  default     = true
-}
+# variable "internet_access" {
+#   description = "Allow access to internet"
+#   default     = true
+# }
 
 variable "lb_integration" {
   description = "Switch to enable/disable LB integration. If True - load_balancers and target_group_arns should be defined"

@@ -83,6 +83,11 @@ variable "valid_until" {
   default     = "2033-01-01T01:00:00Z"
 }
 
+variable "termination_on_expiration_policy" {
+  description = "Terminate instances at expiration"
+  default     = false
+}
+
 variable "public_ip" {
   description = "Assign public IP on EC2 node"
   default     = false

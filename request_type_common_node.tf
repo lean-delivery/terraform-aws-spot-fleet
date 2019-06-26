@@ -4,6 +4,7 @@ resource "aws_spot_fleet_request" "common_nodes_no_lb" {
   allocation_strategy = "diversified"
   target_capacity     = "${var.capacity}"
   valid_until         = "${var.valid_until}"
+  terminate_instances_with_expiration = "${var.termination_on_expiration_policy}"
 
   launch_specification {
     instance_type               = "${var.ec2_type}"

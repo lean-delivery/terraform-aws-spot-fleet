@@ -30,7 +30,7 @@ The module provide the following profiles:
 | type | Type of launch configuration (supported values are 'common_node' and 'ecs_node') | string | `"common_node"` | no |
 | userdata | Userdata script body | string | `""` | no |
 | valid\_until | The date until spot request is valid | string | `"2033-01-01T01:00:00Z"` | no |
-| termination\_on\_expiration_policy | Actions after spot request expires | boolean | `"false"` | no
+| termination\_on\_expiration_policy | Terminate/ignore instance after parent spot request expires | boolean | `"false"` | no
 
 ## Usage
 
